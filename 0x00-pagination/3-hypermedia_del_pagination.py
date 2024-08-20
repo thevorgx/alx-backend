@@ -59,7 +59,7 @@ class Server:
                 data.append(dataset[current_index])
             current_index += 1
 
-        next_index = end_index if len(data) == page_size else current_index
+        next_index = end_index if len(data) == page_size + 1 else current_index
 
         return {
             "index": index,
