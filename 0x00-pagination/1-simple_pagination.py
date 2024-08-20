@@ -47,9 +47,9 @@ class Server:
         start_idx = data_range[0]
         end_idx = data_range[1]
 
-        data_list = self.dataset()
+        data_set = self.dataset()
 
-        if start_idx < len(data_list):
-            return (data_list[start_idx:end_idx])
+        if start_idx < len(data_set):
+            return (data_set[start_idx:end_idx])
         else:
             return([])
