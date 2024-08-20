@@ -4,6 +4,7 @@ BaseCaching = __import__('base_caching').BaseCaching
 
 
 class FIFOCache(BaseCaching):
+    """FIFOCache class inherit from BaseCaching"""
     def put(self, key, item):
         """put item on cache_data dict using FIFO ALGO"""
         if key is not None and item is not None:
