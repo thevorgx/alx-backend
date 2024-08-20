@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""BasicCache Module"""
+"""FIFOCache Module"""
 BaseCaching = __import__('base_caching').BaseCaching
 
 
