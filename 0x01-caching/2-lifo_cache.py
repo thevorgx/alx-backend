@@ -5,7 +5,7 @@ BaseCaching = __import__('base_caching').BaseCaching
 
 class LIFOCache(BaseCaching):
     """LIFOCache class that inherits from BaseCaching"""
-    
+
     def __init__(self):
         """Initialize the cache"""
         super().__init__()
@@ -18,9 +18,12 @@ class LIFOCache(BaseCaching):
                 if self.last_key is not None:
                     print(f"DISCARD: {self.last_key}")
                     del self.cache_data[self.last_key]
-            self.cache_data[key] = item
+            self.cache_data.update({key: item})
             self.last_key = key
 
     def get(self, key):
         """Get an item by key"""
-        return self.cache_data.get(key) if key is not None else None
+        if key is not None:
+            return (self.cache_data.get(key))
+        else:
+            return (None)
