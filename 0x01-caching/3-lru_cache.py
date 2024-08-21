@@ -9,7 +9,6 @@ class LRUCache(BaseCaching):
     def __init__(self):
         """Initialize the cache"""
         super().__init__()
-        self.last_key = None
         self.cache_keys = []
 
     def put(self, key, item):
@@ -27,7 +26,9 @@ class LRUCache(BaseCaching):
 
     def get(self, key):
         """Get an item by key"""
-        if key is not None:
-            return (self.cache_data.get(key))
+        if key is not None and key in self.cache_data:
+            self.cache_keys.remove(key)
+            self.cache_keys.insert(0, key)
+            return (self.cache_data[key])
         else:
             return (None)
