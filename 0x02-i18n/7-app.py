@@ -28,7 +28,7 @@ babel = Babel(app)
 def index():
     """define a route and render HTML template"""
     locale = get_locale()
-    return render_template('5-index.html', locale=locale)
+    return render_template('7-index.html', locale=locale)
 
 
 @babel.localeselector
